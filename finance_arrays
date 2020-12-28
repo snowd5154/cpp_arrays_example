@@ -1,0 +1,89 @@
+setZero(int a[],int n)
+{
+for(int i=0;i<n;i++)
+a[i]=0;
+}
+
+/*Write the definition of the function inputArray that prompts the user to
+input 20 numbers and stores the numbers into alpha*/
+
+inputArray(int alpha[])
+{
+cout<<"Enter 20 numbers: ";
+for(int i=0;i<20;i++)
+cin>>a[i];
+}
+
+/*Write the definition of the function doubleArray that initializes the
+elements of beta to two times the corresponding elements in alpha. Make
+sure that you prevent the function from modifying the elements of alpha*/
+
+doubleArray(int beta[],int alpha[])
+{
+for(int i=0;i<20;i++)
+beta[i]=2*alpha[i];
+}
+
+/*Write the definition of the function copyGamma that sets the elements of
+the first row of inStock to gamma and the remaining rows of inStock to
+three times the previous row of inStock. Make sure that you prevent the
+function from modifying the elements of gamma*/
+
+copyGamma(int inStock[][],int gamma[])
+{
+for(int i=0;i<10;i++)
+for(int j=0;j<4;j++)
+if(i==0)
+inStock[i][j]= gamma[j];
+else
+inStock[i][j]=3*inStock[i-1][j];
+}
+
+/*Write the definities of the function copyAlphaBeta that stores alpha
+into the first five rows of inStock and beta into the last five rows of
+inStock. Make sure that you prevent the function from modifying the
+elements of alpha and beta*/
+
+copyAlphaBeta(int inStock[][],int alpha[],int beta[])
+{
+for(int i=0;i<10;i++)
+for(j=0;j<4;j++)
+if(i<5)
+inStock[i][j]=alpha[j];
+else
+inStock[i][j]=beta[j];
+}
+
+/*Write the definition of the function printArray that prints any
+one-dimensional array of type int. Print 15 elements per line*/
+
+printArray(int a[],int n)
+{
+for(int i=0;i<n;i++)
+{
+if(i%15==0)
+cout<<endl;
+cout<<a[i]<<" ";
+}
+}
+
+/*Write the definition of the function setInStock that prompts the user to
+input the elements for the first column of inStock. The function should
+then set the elements in the remaining columns to two times the
+corresponding element in the previous column, minus the corresponding
+element in delta*/
+
+setInStock(int inStock[][],int delta[])
+{
+for(int i=0;i<10;i++)
+for(int j=0;j<4;j++)
+{
+if(j==0)
+{
+cout<<"Enter the value: ";
+cin>>inStock[i][j];
+}
+else
+inStock[i][j]= 2*inStock[i][j-1] - delta[j];
+}
+}
