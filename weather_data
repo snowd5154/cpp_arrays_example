@@ -1,0 +1,135 @@
+#include<iostream>
+
+#include<conio.h>
+
+#include<math.h>
+
+using namespace std;
+
+//FIND THE AVERAGE OF THE HIGHEST TEMPERATURE AND RETURN THE VALUE
+
+double avgHigh(double tempA[12][2])
+
+{
+
+     double highTotal=0.0;
+
+     //FIND THE TOTAL OF HIGHEST TEMPERATUR OF ALL 12 MONTHS
+
+     for(int k1=0;k1<12;k1++)
+
+     {
+
+          highTotal+=tempA[k1][0];
+
+     }
+
+     return highTotal/12;
+
+}
+
+//FIND THE AVERAGE OF THE LOWEST TEMPERATURE AND RETURN
+
+double avgLow(double tempA[12][2])
+
+{
+
+     double lowTotal=0.0;
+
+     //FIND THE TOTAL OF LOWEST TEMPERATUR OF ALL 12 MONTHS
+
+     for(int k1=0;k1<12;k1++)
+
+     {
+
+          lowTotal+=tempA[k1][1];
+
+     }
+
+     return lowTotal/12;
+
+}
+
+//FINDS THE HIGHEST TEMPERATURE FOR THE YEAR
+
+double findHighTemp(double tempA[12][2])
+
+{
+
+     double highTemp=0.0;
+
+     for(int k1=0;k1<12;k1++)
+
+     {
+
+          if(highTemp<tempA[k1][0])
+
+              highTemp=tempA[k1][0];
+
+     }
+
+     return highTemp;
+
+}
+
+//FINDS THE LOWEST TEMPERATURE FOR THE YEAR
+
+double findLowTemp(double tempA[12][2])
+
+{
+
+     double lowTemp=100.0;
+
+     for(int k1=0;k1<12;k1++)
+
+     {
+
+          if(lowTemp>tempA[k1][1])
+
+              lowTemp=tempA[k1][1];
+
+     }
+
+     return lowTemp;
+
+}
+
+//MAIN METHOD
+
+int main()
+
+{
+
+     //DECLARE THE TWO DIMENSIONAL ARRAY TO STORE THE HIGHEST AND LOWEST TEMPERATURE FOR EACH MONTH
+
+     double tempA[12][2];
+
+     //GET THE VALUE OF HIGHEST AND LOWEST TEMPERATUR FOR EACH MONTH
+
+     for(int k1=0;k1<12;k1++)
+
+     {
+
+          cout<<"ENTER THE HIGHEST TEMPERATURE IN THE MONTH "<<k1+1<<":";
+
+          cin>>tempA[k1][0];
+
+          cout<<"ENTER THE LOWEST TEMPERATURE IN THE MONTH "<<k1+1<<":";
+
+          cin>>tempA[k1][1];
+
+     }
+
+     //PRINT THE RESULT
+
+     cout<<"AVERAGE HIGHEST TEMPERATURE IN THE YEAR :"<<avgHigh(tempA)<<endl;
+
+     cout<<"AVERAGE HIGHEST TEMPERATURE IN THE YEAR :"<<avgLow(tempA)<<endl;
+
+     cout<<" HIGHEST TEMPERATURE IN THE YEAR :"<<findHighTemp(tempA)<<endl;
+
+     cout<<"LOWEST TEMPERATURE IN THE YEAR :"<<findLowTemp(tempA)<<endl;
+
+     getch();
+
+     return 0;
